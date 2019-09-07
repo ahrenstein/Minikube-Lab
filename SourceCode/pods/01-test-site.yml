@@ -1,0 +1,38 @@
+# ------------------- Test Site Deployment ------------------- #
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-site
+  namespace: kube-public
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-site
+  template:
+    metadata:
+      labels:
+        app: test-site
+    spec:
+      containers:
+        - name: testsite
+          image: 172.16.148.192:5000/ahrenstein/debugging:latest
+          ports:
+          - name: http
+            containerPort: 80
+---
+# ------------------- Test Site Service ------------------- #
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-site
+  namespace: kube-public
+spec:
+  ports:
+    - name: nginx
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: test-site
+  type: LoadBalancer
