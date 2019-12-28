@@ -129,7 +129,7 @@ roleRef:
 
 ---
 # ------------------- MetalLB Daemon Set ------------------- #
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   namespace: metallb-system
@@ -185,7 +185,7 @@ spec:
 
 ---
 # ------------------- MetalLB Deployment ------------------- #
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: metallb-system
