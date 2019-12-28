@@ -9,7 +9,7 @@ Getting Started
 **Assuming a Mac workstation** you will need to do the following to get started:
 
 1. Install [Homebrew](https://brew.sh)
-2. `brew cask install minikube vmware-fusion docker`
+2. `brew cask install minikube vmware-fusion docker` (Note: Installing VMware Fusion outside of brew may cause vmrun errors)
 3. `brew install docker-machine-driver-vmware docker`
 4. Run the [customStart.sh](SourceCode/customStart.sh) to start Minikube using some custom parameters
 
