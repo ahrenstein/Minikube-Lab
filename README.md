@@ -40,6 +40,13 @@ and push it
 6. Get the svc address of the test site from the `kube-public` namespace and visit it to verify it works
 7. Develop whatever it is you needed to develop!
 
+Kubernetes Dashboard
+--------------------
+The [Kubernetes Dashboard file](SourceCode/core-infra/04-kubernetes-dashboard.yaml) is provided by "The Kubernetes Authors"
+under the Apache 2.0 license and is their original work.  
+You can access the [dashboard URL](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default)
+using the admin-token secret with `kubectl proxy`.
+
 Caveats
 -------
 There are a few small caveats that come with this lab:
