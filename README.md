@@ -31,14 +31,13 @@ uses on your machine and then run `minikube delete` followed re-running the cust
 
 After any IP changes are sorted out to build the lab out to a minimum standard do the following:
 
-1. `kubectl apply -f SourceCode/core-infra`
-2. Set your local docker environment to use the IP of the registry found in `kubectl get svc -n registry`
-3. Pull `ahrenstein/debugging:latest` from Docker Hub, tag it as `{YOUR REGISTRY IP:PORT}/ahrenstein/debugging:latest
+1. Set your local docker environment to use the IP of the registry found in `kubectl get svc -n registry`
+2. Pull `ahrenstein/debugging:latest` from Docker Hub, tag it as `{YOUR REGISTRY IP:PORT}/ahrenstein/debugging:latest
 and push it
-4. Edit [01-test-site.yml](SourceCode/pods/01-test-site.yml) to point to the newly pushed container
-5. `kubectl apply -f SourceCode/pods/01-test-site.yml`
-6. Get the svc address of the test site from the `kube-public` namespace and visit it to verify it works
-7. Develop whatever it is you needed to develop!
+3. Edit [01-test-site.yml](SourceCode/pods/01-test-site.yml) to point to the newly pushed container
+4. `kubectl apply -f SourceCode/pods/01-test-site.yml`
+5. Get the svc address of the test site from the `kube-public` namespace and visit it to verify it works
+6. Develop whatever it is you needed to develop!
 
 Kubernetes Dashboard
 --------------------
